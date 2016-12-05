@@ -1,8 +1,17 @@
-%% ==================================
-% Author: Xiaodong Shen  
-% Date: 2016-12-03
-% email: xdshen_cn@hotmail.com
-% Description: 主函数(用于循环)
+%% ----------------------------------
+% | 【Description】 主函数(用于循环)
+% | 【Create】2016-12-03
+% | 【Email】xdshen_cn@hotmail.com
+% | 【History】 
+% |         Xiaodong Shen 草稿，2016-12-03 
+% ----------------------------------
+%
+% 示例用法如下：
+% rst = main_iter('par.env.n_bit_dci', [30 40 50 60]);  
+% showtext(rst,'par.env.n_bit_dci','errorStatsBLER(1)','errorStatsBLER(2)','errorStatsBLER(3)');
+%
+% rst = main_iter('par.env.cnr', [-10:10]);  
+% showtext(rst,'par.env.cnr','errorStatsBLER(1)','errorStatsBLER(2)','errorStatsBLER(3)');
 %% ==================================
 
 
@@ -11,7 +20,9 @@ function result = main_iter(varargin)
 % 'par.env.cnr',[1 2 3 4 5 6 7 8 9 10], 'par.env.n_bit_dci', [30 40 50 60];
 % 支持两组参数的变换
 
-% disp(cell2mat(varargin(2)));
+
+
+
 
     if nargin>0
         nvar = round((nargin)/2);     % 总共变量数目

@@ -1,10 +1,10 @@
-%% ==================================
-% Author: Xiaodong Shen  
-% Date: 2016-12-03
-% email: xdshen_cn@hotmail.com
-% Description: NR Channel 
-%% ==================================
-
+%% ----------------------------------
+% | ¡¾Description¡¿ NR Channel 
+% | ¡¾Create¡¿2016-12-03
+% | ¡¾Email¡¿xdshen_cn@hotmail.com
+% | ¡¾History¡¿ 
+% |         Xiaodong Shen ²Ý¸å£¬2016-12-03 
+% ----------------------------------
 function [y] = nr_channel(par,gvar,in, RxMask)
     
     % TODO

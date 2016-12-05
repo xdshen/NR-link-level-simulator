@@ -1,9 +1,10 @@
-%% ==================================
-% Author: Xiaodong Shen  
-% Date: 2016-12-03
-% email: xdshen_cn@hotmail.com
-% Description: 返回默认的动态变量
-%% ==================================
+%% ----------------------------------
+% | 【Description】 返回默认的动态变量
+% | 【Create】2016-12-03
+% | 【Email】xdshen_cn@hotmail.com
+% | 【History】 
+% |         Xiaodong Shen 草稿，2016-12-03 
+% ----------------------------------
 function [ gvar ] = default_gvar( par )
     gvar.sim.stored = [];
     gvar.sim.stored.step = 0;

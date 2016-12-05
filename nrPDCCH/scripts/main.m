@@ -1,13 +1,14 @@
-%% ==================================
-% Author: Xiaodong Shen  
-% Date: 2016-12-03
-% email: xdshen_cn@hotmail.com
-% Description: 主函数
-%% ==================================
-
+%% ----------------------------------
+% | 【Description】 主函数
+% | 【Create】2016-12-03
+% | 【Email】xdshen_cn@hotmail.com
+% | 【History】 
+% |         Xiaodong Shen 草稿，2016-12-03 
+% ----------------------------------
 %
-% IMPORTANT：运行之前请阅读帮助文档！！！
 %
+% IMPORTANT：运行之前请阅读帮助文档！！！ help/doc_help.m
+%% ==================================
 
 
 function result = main(par,gvar)

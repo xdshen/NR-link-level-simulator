@@ -1,10 +1,10 @@
-%% ==================================
-% Author: Xiaodong Shen  
-% Date: 2016-12-03
-% email: xdshen_cn@hotmail.com
-% Description: 加入CRC比特
-%% ==================================
-
+%% ----------------------------------
+% | 【Description】 加入CRC比特
+% | 【Create】2016-12-03
+% | 【Email】xdshen_cn@hotmail.com
+% | 【History】 
+% |         Xiaodong Shen 草稿，2016-12-03 
+% ----------------------------------
 function info_crc = nrpdcch_addcrc(par,gvar,info)    
     persistent hCRC;
     if isempty(hCRC)

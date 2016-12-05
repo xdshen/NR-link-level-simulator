@@ -1,10 +1,10 @@
-%% ==================================
-% Author: Xiaodong Shen  
-% Date: 2016-12-03
-% email: xdshen_cn@hotmail.com
-% Description: NR-PDCCH RE Demapping
-%% ==================================
-
+%% ----------------------------------
+% | 【Description】 NR-PDCCH RE Demapping
+% | 【Create】2016-12-03
+% | 【Email】xdshen_cn@hotmail.com
+% | 【History】 
+% |         Xiaodong Shen 草稿，2016-12-03 
+% ----------------------------------
 function [info rs ]= nrpdcch_demap(par,gvar,in)
 
    % TODO: 需要补充具体的PDCCH映射方法

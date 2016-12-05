@@ -1,10 +1,10 @@
-%% ==================================
-% Author: Xiaodong Shen  
-% Date: 2016-12-03
-% email: xdshen_cn@hotmail.com
-% Description: QAM调制;
-%% ==================================
-
+%% ----------------------------------
+% | 【Description】 QAM解调;
+% | 【Create】2016-12-03
+% | 【Email】xdshen_cn@hotmail.com
+% | 【History】 
+% |         Xiaodong Shen 草稿，2016-12-03 
+% ----------------------------------
 function y = rectdeqam(par,gvar,in,noiseVar)
 
     persistent hQAM2;

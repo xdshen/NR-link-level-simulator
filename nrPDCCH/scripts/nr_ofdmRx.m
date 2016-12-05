@@ -1,10 +1,10 @@
-%% ==================================
-% Author: Xiaodong Shen  
-% Date: 2016-12-03
-% email: xdshen_cn@hotmail.com
-% Description: OFDM Rx
-%% ==================================
-
+%% ----------------------------------
+% | 【Description】 OFDM Rx
+% | 【Create】2016-12-03
+% | 【Email】xdshen_cn@hotmail.com
+% | 【History】 
+% |         Xiaodong Shen 草稿，2016-12-03 
+% ----------------------------------
 function y = nr_ofdmRx(par,gvar,in, RxMask)
 
 % 返回一个矩阵，第一维是子载波，第二维是符号，第三维是天线（第三维待完成）    

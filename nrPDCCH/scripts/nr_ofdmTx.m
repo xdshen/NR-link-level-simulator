@@ -1,9 +1,10 @@
-%% ==================================
-% Author: Xiaodong Shen  
-% Date: 2016-12-03
-% email: xdshen_cn@hotmail.com
-% Description: OFDM Tx
-%% ==================================
+%% ----------------------------------
+% | 【Description】 OFDM Tx
+% | 【Create】2016-12-03
+% | 【Email】xdshen_cn@hotmail.com
+% | 【History】 
+% |         Xiaodong Shen 草稿，2016-12-03 
+% ----------------------------------
 
 function [y, TxMask]= nr_ofdmTx(par,gvar,in)
     % 返回一个矩阵，第一维是时域采样点，第二维是天线

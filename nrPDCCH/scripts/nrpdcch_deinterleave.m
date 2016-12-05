@@ -1,10 +1,10 @@
-%% ==================================
-% Author: Xiaodong Shen  
-% Date: 2016-12-05
-% email: xdshen_cn@hotmail.com
-% Description: 解交织 
-%% ==================================
-
+%% ----------------------------------
+% | 【Description】 解交织
+% | 【Create】2016-12-03
+% | 【Email】xdshen_cn@hotmail.com
+% | 【History】 
+% |         Xiaodong Shen 草稿，2016-12-03 
+% ----------------------------------
 function out = nrpdcch_deinterleave(par,gvar,in)
     out = in;
 end

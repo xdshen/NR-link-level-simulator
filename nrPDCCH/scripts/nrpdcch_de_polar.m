@@ -1,10 +1,10 @@
-%% ==================================
-% Author: Xiaodong Shen  
-% Date: 2016-12-03
-% email: xdshen_cn@hotmail.com
-% Description: 控制信道的Polar解码
-%% ==================================
-
+%% ----------------------------------
+% | 【Description】 控制信道的Polar解码
+% | 【Create】2016-12-03
+% | 【Email】xdshen_cn@hotmail.com
+% | 【History】 
+% |         Xiaodong Shen 草稿，2016-12-03 
+% ----------------------------------
 function info_de = nrpdcch_de_polar(par,var,in)
     
     % 计算下编码后的比特数目 （含CRC）    
