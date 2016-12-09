@@ -9,7 +9,10 @@ function [ par ] = default_par( )
 
     par.sim = [];        
     par.sim.steps =1000;
-    par.sim.seed = 12345;
+    par.sim.seed.channel_param_seed = 12345;
+    par.sim.seed.noise_seed = 4324;
+    par.sim.seed.data_seed = 123465;
+    par.sim.seed.scheduler_seed = 873;
         
     par.env = [];   
     

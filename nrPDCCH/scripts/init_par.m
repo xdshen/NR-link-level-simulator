@@ -6,7 +6,13 @@
 % |         Xiaodong Shen 草稿，2016-12-03 
 % ----------------------------------
 function [ par ] = init_par(par)
-    par.env.dlrb_pdcch = 5; % PDCCH占用的等效RB数目    
+
+    % 仿真相关
+    par.sim.randStream.channel_param = RandStream('mt19937ar','Seed',par.sim.seed.channel_param_seed);
+    par.sim.randStream.noise = RandStream('mt19937ar','Seed',par.sim.seed.noise_seed);
+    par.sim.randStream.data = RandStream('mt19937ar','Seed',par.sim.seed.data_seed);
+    par.sim.randStream.scheduler = RandStream('mt19937ar','Seed',par.sim.seed.scheduler_seed);
+    
     
     %% 信道相关
     % calculate channe Matrix
@@ -16,16 +22,16 @@ function [ par ] = init_par(par)
             par.env.chmod.taps = cal_channel_matrix_tdl(par.env.chmod.taps_t, par.env.dlTs, par.env.chmod.DSdisired, 'Normalized');    
         case 'awgn'
             par.env.chmod.taps = cal_channel_matrix_tdl(par.env.chmod.taps_t, par.env.dlTs, par.env.chmod.DSdisired, 'Normalized');    
-    end  
+    end
     
     %% 资源映射相关
     % initialize RE mapping
     % NR-PDCCH资源映射    (只映射到第一个符号)
     perRB = [1 0 1 1 0 1 1 0 1 1 0 1]';
-    selectedRB_idx = randperm(par.env.dlrb,par.env.dlrb_pdcch); % 随机选择5个PRB ;
-    selectedRB = false(par.env.dlrb,1); 
+    selectedRB_idx = randperm(par.sim.randStream.scheduler,par.env.dlrb,par.env.dlrb_pdcch); % 随机选择5个PRB ;
+    selectedRB = false(par.env.dlrb,1);
     selectedRB(selectedRB_idx)=true;
-    permute_selectedRB = logical(kron(selectedRB, perRB));    
+    permute_selectedRB = logical(kron(selectedRB, perRB));
     par.env.REmapping = false(par.env.dlnosc, par.env.dlnosymslot, par.env.nlayer);
     par.env.REmapping(permute_selectedRB,1,1) = true; % TODO 此处要检查代码是否正确
     par.env.REmapping_rb = false(par.env.dlrb, par.env.dlnosymslot, par.env.nlayer); % 占用的RB的编号
