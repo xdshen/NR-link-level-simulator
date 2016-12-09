@@ -18,44 +18,23 @@ function y = nr_ofdmRx(par,gvar,in, RxMask)
 in(~RxMask) = complex(0);
     
 % For a subframe of data
-numDataTones = par.env.dlrb*par.env.noscrb;
-numSymb = par.env.nosymslot;
+numDataTones = par.env.dlnosc ;
+numSymb = par.env.dlnosymslot;
 [~, numLayers] = size(in);
-% N assumes 15KHz subcarrier spacing, else N = 4096
-switch par.env.dlrb % depends on the chanBW
-    case 6
-        N = 128;
-        cpLen0 = 10; cpLenR = 9;
-    case 15
-        N = 256;
-        cpLen0 = 20; cpLenR = 18;
-    case 25
-        N = 512;
-        cpLen0 = 40; cpLenR = 36;
-    case 50
-        N = 1024;
-        cpLen0 = 80; cpLenR = 72;
-    case 75 
-        N = 1536;                   
-        cpLen0 = 120; cpLenR = 108; 
-    case 100
-        N = 2048;
-        cpLen0 = 160; cpLenR = 144;
-end
-slotLen = (N*7 + cpLen0 + cpLenR*6); % 固定的7个符号 TODO
+N = par.env.dlFFTsize;
+slotLen = sum(par.env.dlFFTsize + par.env.dlcp); % 计算一个slot的采样点总数目
 
 tmp = complex(zeros(N, numSymb, numLayers));
 
 % Remove CP - unequal lengths over a slot
 
-    % First OFDM symbol
-    tmp(:, 1, :) = in(cpLen0 + (1:N), :);
-
-    % Next 6 OFDM symbols
-    for k = 1:6
-        tmp(:, k+1, :) = in(cpLen0+k*N+k*cpLenR + (1:N), :);
-    end    
-
+    idx =0;
+    for k =1:numSymb
+        cp = par.env.dlcp(k);
+        tmp(:,k,:) = in(idx + cp + (1:N),:);
+        idx = idx + cp + N;
+    end
+    numDataTones = par.env.dlnosc;    
 
 % FFT processing
 x = step(hFFT, tmp);

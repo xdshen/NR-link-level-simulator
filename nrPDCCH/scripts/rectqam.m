@@ -9,19 +9,19 @@ function info_qam = rectqam(par,gvar,info)
     persistent hQAM2;
     persistent hQAM4;
     persistent hQAM6;
-    if isempty(hQAM2) & (par.env.modu==2)
+    if isempty(hQAM2) && (par.env.dlmodu==2)
         hQAM2 = comm.RectangularQAMModulator('ModulationOrder',4,'BitInput',true, 'SymbolMapping', 'Gray','NormalizationMethod','Average power');
     end     
     
-    if isempty(hQAM4) & (par.env.modu==4)
+    if isempty(hQAM4) && (par.env.dlmodu==4)
         hQAM4 = comm.RectangularQAMModulator('ModulationOrder',16,'BitInput',true, 'SymbolMapping', 'Gray','NormalizationMethod','Average power');
     end   
     
-    if isempty(hQAM6) & (par.env.modu==6)
+    if isempty(hQAM6) && (par.env.dlmodu==6)
         hQAM6 = comm.RectangularQAMModulator('ModulationOrder',64,'BitInput',true, 'SymbolMapping', 'Gray','NormalizationMethod','Average power');
     end       
     
-    switch par.env.modu
+    switch par.env.dlmodu
         case 2
             info_qam = step(hQAM2,info);
         case 4

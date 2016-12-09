@@ -6,6 +6,7 @@
 % |         Xiaodong Shen �ݸ壬2016-12-03 
 % ----------------------------------
 function [ gvar ] = init_gvar(par , gvar )
-    gvar.sim.stored.step = 0;    
+    gvar.sim.stored.step = 0;
+    gvar.sim.stored.t = 0;
 end
 
